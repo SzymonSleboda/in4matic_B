@@ -45,7 +45,7 @@ app.use((req, res, next) => {
 // Routing zostanie dodany potem
 app.use("/api/");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 const appStart = async () => {
   try {
