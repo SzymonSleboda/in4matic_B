@@ -1,7 +1,15 @@
 const User = require("../models/User");
+const validator = require("validator");
 
 const register = async (req, res) => {
   const { name, email, password } = req.body;
+  
+  if (!validator.isEmail(email)) {
+    return res.status(400).json({
+      error: "Invalid email format",
+    });
+  }
+
   try {
     const existingUser = await User.findOne({ email });
 
@@ -16,7 +24,6 @@ const register = async (req, res) => {
       email,
       password,
     });
-    
   } catch (error) {
     res.status(400).json({
       error: error.message,
