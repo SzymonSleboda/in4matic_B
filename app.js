@@ -4,6 +4,7 @@ const cors = require("cors");
 const app = express();
 const log4js = require("log4js");
 const databaseConnect = require("./database/database");
+const userRouter = require("./routes/userRouter");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -42,8 +43,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Routing zostanie dodany potem
-app.use("/api/");
+app.use("/users", userRouter);
 
 const PORT = process.env.PORT || 4000;
 
