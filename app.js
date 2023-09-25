@@ -44,6 +44,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/users", userRouter);
+// app.use("/transactions", routerTransakcji); do dodania potem
 
 const PORT = process.env.PORT || 4000;
 
