@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.MONGO_URI, {
+      dbName: "in4matic_B",
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
