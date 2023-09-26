@@ -5,6 +5,7 @@ const app = express();
 const log4js = require("log4js");
 const databaseConnect = require("./database/database");
 const userRouter = require("./routes/userRouter");
+const transactionRouter = require("./routes/transactionRoutes");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -44,7 +45,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/users", userRouter);
-// app.use("/transactions", routerTransakcji); do dodania potem
+app.use("/transactions", transactionRouter);
 
 const PORT = process.env.PORT || 4000;
 
