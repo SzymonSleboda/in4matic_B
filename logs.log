@@ -1,0 +1,94 @@
+[2023-09-26T15:16:13.274] [INFO] default - MongoDB connected successfully
+[2023-09-26T15:16:13.278] [INFO] default - Server running on port 3000
+[2023-09-26T15:19:37.503] [INFO] default - ----------------------------------------
+
+[2023-09-26T15:19:37.504] [INFO] default - Request: POST /users/register
+[2023-09-26T15:19:37.504] [INFO] default - Request Body: {"name":"Pawel","email":"janpawel@gmail.com","password":"jan"}
+[2023-09-26T15:19:37.511] [INFO] default - Response Status: 400
+[2023-09-26T15:19:37.511] [INFO] default - Response Time: 8 ms
+[2023-09-26T15:19:54.785] [INFO] default - ----------------------------------------
+
+[2023-09-26T15:19:54.786] [INFO] default - Request: POST /users/register
+[2023-09-26T15:19:54.786] [INFO] default - Request Body: {"name":"Pawel","email":"janpawel@gmail.com","password":"januszpawlacz"}
+[2023-09-26T15:19:54.833] [INFO] default - Response Status: 400
+[2023-09-26T15:19:54.833] [INFO] default - Response Time: 48 ms
+[2023-09-26T15:20:14.297] [INFO] default - ----------------------------------------
+
+[2023-09-26T15:20:14.298] [INFO] default - Request: POST /users/register
+[2023-09-26T15:20:14.298] [INFO] default - Request Body: {"name":"Pawel","email":"janpawel@gmail.com","password":"januszpawlacz"}
+[2023-09-26T15:20:14.336] [INFO] default - Response Status: 400
+[2023-09-26T15:20:14.337] [INFO] default - Response Time: 39 ms
+[2023-09-26T15:20:53.090] [INFO] default - ----------------------------------------
+
+[2023-09-26T15:20:53.091] [INFO] default - Request: POST /users/register
+[2023-09-26T15:20:53.091] [INFO] default - Request Body: {"name":"Paweu","email":"janpawel@gmail.com","password":"januszpawlacz"}
+[2023-09-26T15:20:53.138] [INFO] default - Response Status: 400
+[2023-09-26T15:20:53.138] [INFO] default - Response Time: 48 ms
+[2023-09-26T15:21:04.301] [INFO] default - ----------------------------------------
+
+[2023-09-26T15:21:04.301] [INFO] default - Request: POST /users/register
+[2023-09-26T15:21:04.301] [INFO] default - Request Body: {"name":"Paweu","email":"janpawel@gmail.com","password":"213721372137"}
+[2023-09-26T15:21:04.338] [INFO] default - Response Status: 400
+[2023-09-26T15:21:04.338] [INFO] default - Response Time: 37 ms
+[2023-09-26T15:22:12.229] [INFO] default - ----------------------------------------
+
+[2023-09-26T15:22:12.230] [INFO] default - Request: POST /users/login
+[2023-09-26T15:22:12.230] [INFO] default - Request Body: {"name":"Paweu","email":"janpawel@gmail.com","password":"213721372137"}
+[2023-09-26T15:22:12.267] [INFO] default - Response Status: 400
+[2023-09-26T15:22:12.267] [INFO] default - Response Time: 38 ms
+[2023-09-26T15:22:32.970] [INFO] default - ----------------------------------------
+
+[2023-09-26T15:22:32.970] [INFO] default - Request: POST /users/register
+[2023-09-26T15:22:32.970] [INFO] default - Request Body: {"name":"Paweu","email":"janpawel@gmail.com","password":"213721372137"}
+[2023-09-26T15:22:33.011] [INFO] default - Response Status: 400
+[2023-09-26T15:22:33.011] [INFO] default - Response Time: 41 ms
+[2023-09-26T15:27:19.201] [INFO] default - MongoDB connected successfully
+[2023-09-26T15:27:19.206] [INFO] default - Server running on port 3000
+[2023-09-26T15:27:26.689] [INFO] default - ----------------------------------------
+
+[2023-09-26T15:27:26.690] [INFO] default - Request: POST /users/register
+[2023-09-26T15:27:26.690] [INFO] default - Request Body: {"name":"Paweu","email":"janpawel@gmail.com","password":"213721372137"}
+[2023-09-26T15:27:26.814] [INFO] default - Response Status: 201
+[2023-09-26T15:27:26.814] [INFO] default - Response Time: 124 ms
+[2023-09-26T15:28:44.331] [INFO] default - ----------------------------------------
+
+[2023-09-26T15:28:44.332] [INFO] default - Request: POST /users/login
+[2023-09-26T15:28:44.332] [INFO] default - Request Body: {"name":"Paweu","email":"janpawel@gmail.com","password":"213721372137"}
+[2023-09-26T15:28:44.392] [INFO] default - Response Status: 200
+[2023-09-26T15:28:44.393] [INFO] default - Response Time: 61 ms
+[2023-09-26T15:28:52.128] [INFO] default - ----------------------------------------
+
+[2023-09-26T15:28:52.129] [INFO] default - Request: POST /users/login
+[2023-09-26T15:28:52.129] [INFO] default - Request Body: {"name":"Paweu","email":"janpawel@gmail.com","password":"213721372137"}
+[2023-09-26T15:28:52.179] [INFO] default - Response Status: 200
+[2023-09-26T15:28:52.180] [INFO] default - Response Time: 51 ms
+[2023-09-26T15:28:52.861] [INFO] default - ----------------------------------------
+
+[2023-09-26T15:28:52.861] [INFO] default - Request: POST /users/login
+[2023-09-26T15:28:52.862] [INFO] default - Request Body: {"name":"Paweu","email":"janpawel@gmail.com","password":"213721372137"}
+[2023-09-26T15:28:52.910] [INFO] default - Response Status: 200
+[2023-09-26T15:28:52.911] [INFO] default - Response Time: 49 ms
+[2023-09-26T15:28:57.342] [INFO] default - ----------------------------------------
+
+[2023-09-26T15:28:57.343] [INFO] default - Request: POST /users/logout
+[2023-09-26T15:28:57.343] [INFO] default - Request Body: {"name":"Paweu","email":"janpawel@gmail.com","password":"213721372137"}
+[2023-09-26T15:28:57.345] [INFO] default - Response Status: 404
+[2023-09-26T15:28:57.345] [INFO] default - Response Time: 3 ms
+[2023-09-26T15:29:09.440] [INFO] default - ----------------------------------------
+
+[2023-09-26T15:29:09.441] [INFO] default - Request: GET /users/logout
+[2023-09-26T15:29:09.441] [INFO] default - Request Body: {"name":"Paweu","email":"janpawel@gmail.com","password":"213721372137"}
+[2023-09-26T15:29:09.442] [INFO] default - Response Status: 401
+[2023-09-26T15:29:09.443] [INFO] default - Response Time: 2 ms
+[2023-09-26T15:29:15.780] [INFO] default - ----------------------------------------
+
+[2023-09-26T15:29:15.780] [INFO] default - Request: GET /users/logout
+[2023-09-26T15:29:15.781] [INFO] default - Request Body: {"name":"Paweu","email":"janpawel@gmail.com","password":"213721372137"}
+[2023-09-26T15:29:15.938] [INFO] default - Response Status: 200
+[2023-09-26T15:29:15.939] [INFO] default - Response Time: 158 ms
+[2023-09-26T15:29:27.993] [INFO] default - ----------------------------------------
+
+[2023-09-26T15:29:27.993] [INFO] default - Request: POST /users/login
+[2023-09-26T15:29:27.993] [INFO] default - Request Body: {"name":"Paweu","email":"janpawel@gmail.com","password":"213721372137"}
+[2023-09-26T15:29:28.045] [INFO] default - Response Status: 200
+[2023-09-26T15:29:28.045] [INFO] default - Response Time: 52 ms
