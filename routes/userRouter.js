@@ -23,7 +23,7 @@ const auth = require("../middleware/authMiddleware");
 
 /**
  * @swagger
- * /register:
+ * /users/register:
  *   post:
  *     summary: Register a new user
  *     tags: [Users]
@@ -50,7 +50,7 @@ const auth = require("../middleware/authMiddleware");
 router.post("/register", validateRegister, validate, register);
 /**
  * @swagger
- * /login:
+ * /users/login:
  *   post:
  *     summary: Log in a user
  *     tags: [Users]
@@ -75,7 +75,7 @@ router.post("/register", validateRegister, validate, register);
 router.post("/login", validateLogin, validate, login);
 /**
  * @swagger
- * /refresh:
+ * /users/refresh:
  *   post:
  *     summary: Refresh access tokens
  *     tags: [Users]
@@ -86,7 +86,7 @@ router.post("/login", validateLogin, validate, login);
 router.post("/refresh", refreshTokens);
 /**
  * @swagger
- * /profile:
+ * /users/profile:
  *   get:
  *     summary: Get user profile
  *     tags: [Users]
@@ -99,7 +99,7 @@ router.post("/refresh", refreshTokens);
 router.get("/profile", auth, getUserProfile);
 /**
  * @swagger
- * /logout:
+ * /users/logout:
  *   get:
  *     summary: Log out a user
  *     tags: [Users]
