@@ -53,6 +53,7 @@ const auth = require("../middleware/authMiddleware");
  *   post:
  *     summary: Register a new user
  *     tags: [Users]
+ *     security: []
  *     requestBody:
  *       required: true
  *       content:
@@ -75,6 +76,7 @@ router.post("/register", validateRegister, validate, register);
  *   post:
  *     summary: Log in a user
  *     tags: [Users]
+ *     security: []
  *     requestBody:
  *       required: true
  *       content:
@@ -105,6 +107,7 @@ router.post("/login", validateLogin, validate, login);
  *   post:
  *     summary: Refresh access tokens
  *     tags: [Users]
+ *     security: []
  *     responses:
  *       200:
  *         description: Access tokens refreshed successfully
