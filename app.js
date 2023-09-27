@@ -27,7 +27,7 @@ const options = {
       },
     ],
   },
-  apis: ["./routes/transactionRoutes.js", "userRouter.js"],
+  apis: ["./routes/transactionRoutes.js", "./userRouter.js"],
 };
 
 const app = express();
