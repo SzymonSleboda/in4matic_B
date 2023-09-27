@@ -1,6 +1,5 @@
 require("dotenv").config();
 const cors = require("cors");
-const app = express();
 const log4js = require("log4js");
 const databaseConnect = require("./database/database");
 const userRouter = require("./routes/userRouter");
@@ -37,6 +36,8 @@ const options = {
   },
   apis: ["./routes/transactionRoutes.js", "userRouter.js"],
 };
+
+const app = express();
 
 const specs = swaggerJsdoc(options);
 app.use("/swagger", swaggerUi.serve, swaggerUi.setup(specs));
