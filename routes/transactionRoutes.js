@@ -20,6 +20,41 @@ const auth = require("../middleware/authMiddleware");
 
 /**
  * @swagger
+ * components:
+ *   schemas:
+ *     TransactionCreate:
+ *       type: object
+ *       properties:
+ *         amount:
+ *           type: number
+ *           description: The transaction amount.
+ *           example: 100.50
+ *         category:
+ *           type: string
+ *           description: The transaction category.
+ *           example: Groceries
+ *         date:
+ *           type: string
+ *           format: date
+ *           description: The transaction date (YYYY-MM-DD).
+ *           example: 2023-09-15
+ *         isIncome:
+ *           type: boolean
+ *           description: Whether the transaction is income or expense.
+ *           example: false
+ *         comment:
+ *           type: string
+ *           description: A comment or note for the transaction.
+ *           example: Weekly groceries shopping
+ *       required:
+ *         - amount
+ *         - category
+ *         - date
+ *         - isIncome
+ */
+
+/**
+ * @swagger
  * /transactions/categories/{month}/{year}:
  *   get:
  *     summary: Get filtered category totals for a specific month and year
@@ -42,6 +77,7 @@ const auth = require("../middleware/authMiddleware");
  *         description: Filtered category totals retrieved successfully
  */
 router.get("/categories/:month/:year", auth, getFilteredCategoryTotals);
+
 /**
  * @swagger
  * /transactions/categories/totals:
@@ -55,6 +91,7 @@ router.get("/categories/:month/:year", auth, getFilteredCategoryTotals);
  *         description: Category totals retrieved successfully
  */
 router.get("/categories/totals", auth, getCategoryTotals);
+
 /**
  * @swagger
  * /transactions/{month}/{year}:
@@ -79,6 +116,7 @@ router.get("/categories/totals", auth, getCategoryTotals);
  *         description: Filtered transactions retrieved successfully
  */
 router.get("/:month/:year", auth, filterTransactions);
+
 /**
  * @swagger
  * /transactions/{id}:
@@ -96,7 +134,7 @@ router.get("/:month/:year", auth, filterTransactions);
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/definitions/TransactionUpdate'
+ *             $ref: '#/components/schemas/TransactionCreate'
  *     security:
  *       - BearerAuth: []
  *     responses:
@@ -104,6 +142,7 @@ router.get("/:month/:year", auth, filterTransactions);
  *         description: Transaction updated successfully
  */
 router.patch("/:id", auth, updateTransaction);
+
 /**
  * @swagger
  * /transactions/{id}:
@@ -123,6 +162,7 @@ router.patch("/:id", auth, updateTransaction);
  *         description: Transaction deleted successfully
  */
 router.delete("/:id", auth, deleteTransaction);
+
 /**
  * @swagger
  * /transactions:
@@ -143,7 +183,7 @@ router.delete("/:id", auth, deleteTransaction);
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/definitions/TransactionCreate'
+ *             $ref: '#/components/schemas/TransactionCreate'
  *     security:
  *       - BearerAuth: []
  *     responses:
@@ -151,6 +191,7 @@ router.delete("/:id", auth, deleteTransaction);
  *         description: Transaction created successfully
  */
 router.get("/", auth, getAllTransactions);
+
 /**
  * @swagger
  * definitions:
@@ -159,19 +200,30 @@ router.get("/", auth, getAllTransactions);
  *     properties:
  *       amount:
  *         type: number
- *         required: true
+ *         description: The transaction amount.
+ *         example: 100.50
  *       category:
  *         type: string
- *         required: true
+ *         description: The transaction category.
+ *         example: Groceries
  *       date:
  *         type: string
- *         required: true
+ *         format: date
+ *         description: The transaction date (YYYY-MM-DD).
+ *         example: 2023-09-15
  *       isIncome:
  *         type: boolean
- *         required: true
+ *         description: Whether the transaction is income or expense.
+ *         example: false
  *       comment:
  *         type: string
+ *         description: A comment or note for the transaction.
+ *         example: Weekly groceries shopping
+ *     required:
+ *       - amount
+ *       - category
+ *       - date
+ *       - isIncome
  */
-router.post("/", auth, createTransaction);
 
 module.exports = router;
