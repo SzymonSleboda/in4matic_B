@@ -117,8 +117,6 @@ router.post("/refresh", refreshTokens);
  *   get:
  *     summary: Get user profile
  *     tags: [Users]
- *     security:
- *       - BearerAuth: []
  *     responses:
  *       200:
  *         description: User profile retrieved successfully
@@ -131,8 +129,6 @@ router.get("/profile", auth, getUserProfile);
  *   get:
  *     summary: Log out a user
  *     tags: [Users]
- *     security:
- *       - BearerAuth: []
  *     responses:
  *       200:
  *         description: User logged out successfully

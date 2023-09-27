@@ -70,8 +70,6 @@ const auth = require("../middleware/authMiddleware");
  *         description: Year (e.g., 2023)
  *         required: true
  *         type: string
- *     security:
- *       - BearerAuth: []
  *     responses:
  *       200:
  *         description: Filtered category totals retrieved successfully
@@ -84,8 +82,6 @@ router.get("/categories/:month/:year", auth, getFilteredCategoryTotals);
  *   get:
  *     summary: Get category totals
  *     tags: [Transactions]
- *     security:
- *       - BearerAuth: []
  *     responses:
  *       200:
  *         description: Category totals retrieved successfully
@@ -109,8 +105,6 @@ router.get("/categories/totals", auth, getCategoryTotals);
  *         description: Year (e.g., 2023)
  *         required: true
  *         type: string
- *     security:
- *       - BearerAuth: []
  *     responses:
  *       200:
  *         description: Filtered transactions retrieved successfully
@@ -135,8 +129,6 @@ router.get("/:month/:year", auth, filterTransactions);
  *         application/json:
  *           schema:
  *             $ref: '#/components/schemas/TransactionCreate'
- *     security:
- *       - BearerAuth: []
  *     responses:
  *       200:
  *         description: Transaction updated successfully
@@ -155,8 +147,6 @@ router.patch("/:id", auth, updateTransaction);
  *         description: Transaction ID
  *         required: true
  *         type: string
- *     security:
- *       - BearerAuth: []
  *     responses:
  *       200:
  *         description: Transaction deleted successfully
@@ -169,8 +159,6 @@ router.delete("/:id", auth, deleteTransaction);
  *   get:
  *     summary: Get all transactions
  *     tags: [Transactions]
- *     security:
- *       - BearerAuth: []
  *     responses:
  *       200:
  *         description: All transactions retrieved successfully
@@ -184,8 +172,6 @@ router.delete("/:id", auth, deleteTransaction);
  *         application/json:
  *           schema:
  *             $ref: '#/components/schemas/TransactionCreate'
- *     security:
- *       - BearerAuth: []
  *     responses:
  *       200:
  *         description: Transaction created successfully
