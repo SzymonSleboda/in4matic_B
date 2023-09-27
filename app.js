@@ -14,18 +14,11 @@ const options = {
   definition: {
     openapi: "3.1.0",
     info: {
-      title: "LogRocket Express API with Swagger",
+      title: "in4matic",
       version: "0.1.0",
-      description:
-        "This is a simple CRUD API application made with Express and documented with Swagger",
-      license: {
-        name: "MIT",
-        url: "https://spdx.org/licenses/MIT.html",
-      },
+      description: "Welcome to project of group in4matic!",
       contact: {
-        name: "SzymonSleboda",
-        url: "https://logrocket.com",
-        email: "szymonskeboda@email.com",
+        email: "szymonslebodawork1@gmail.com",
       },
     },
     servers: [
