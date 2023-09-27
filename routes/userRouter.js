@@ -23,6 +23,32 @@ const auth = require("../middleware/authMiddleware");
 
 /**
  * @swagger
+ * components:
+ *   schemas:
+ *     User:
+ *       type: object
+ *       properties:
+ *         name:
+ *           type: string
+ *           description: The name of the user.
+ *           example: John Doe
+ *         email:
+ *           type: string
+ *           format: email
+ *           description: The email address of the user.
+ *           example: john.doe@example.com
+ *         password:
+ *           type: string
+ *           description: The password of the user.
+ *           example: mySecurePassword
+ *       required:
+ *         - name
+ *         - email
+ *         - password
+ */
+
+/**
+ * @swagger
  * /users/register:
  *   post:
  *     summary: Register a new user
@@ -32,22 +58,17 @@ const auth = require("../middleware/authMiddleware");
  *       content:
  *         application/json:
  *           schema:
- *             type: object
- *             properties:
- *               name:
- *                 type: string
- *               email:
- *                 type: string
- *               password:
- *                 type: string
- *             required:
- *               - email
- *               - password
+ *             $ref: '#/components/schemas/User'
+ *           example:
+ *             name: John Doe
+ *             email: john.doe@example.com
+ *             password: mySecurePassword
  *     responses:
  *       200:
  *         description: User registered successfully
  */
 router.post("/register", validateRegister, validate, register);
+
 /**
  * @swagger
  * /users/login:
@@ -63,8 +84,12 @@ router.post("/register", validateRegister, validate, register);
  *             properties:
  *               email:
  *                 type: string
+ *                 description: The email address of the user.
+ *                 example: john.doe@example.com
  *               password:
  *                 type: string
+ *                 description: The password of the user.
+ *                 example: mySecurePassword
  *             required:
  *               - email
  *               - password
@@ -73,6 +98,7 @@ router.post("/register", validateRegister, validate, register);
  *         description: User logged in successfully
  */
 router.post("/login", validateLogin, validate, login);
+
 /**
  * @swagger
  * /users/refresh:
@@ -84,6 +110,7 @@ router.post("/login", validateLogin, validate, login);
  *         description: Access tokens refreshed successfully
  */
 router.post("/refresh", refreshTokens);
+
 /**
  * @swagger
  * /users/profile:
@@ -97,6 +124,7 @@ router.post("/refresh", refreshTokens);
  *         description: User profile retrieved successfully
  */
 router.get("/profile", auth, getUserProfile);
+
 /**
  * @swagger
  * /users/logout:
