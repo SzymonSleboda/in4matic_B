@@ -1,11 +1,45 @@
 require("dotenv").config();
-const express = require("express");
 const cors = require("cors");
 const app = express();
 const log4js = require("log4js");
 const databaseConnect = require("./database/database");
 const userRouter = require("./routes/userRouter");
 const transactionRouter = require("./routes/transactionRoutes");
+
+const express = require("express"),
+  bodyParser = require("body-parser"),
+  swaggerJsdoc = require("swagger-jsdoc"),
+  swaggerUi = require("swagger-ui-express");
+
+const options = {
+  definition: {
+    openapi: "3.1.0",
+    info: {
+      title: "LogRocket Express API with Swagger",
+      version: "0.1.0",
+      description:
+        "This is a simple CRUD API application made with Express and documented with Swagger",
+      license: {
+        name: "MIT",
+        url: "https://spdx.org/licenses/MIT.html",
+      },
+      contact: {
+        name: "SzymonSleboda",
+        url: "https://logrocket.com",
+        email: "szymonskeboda@email.com",
+      },
+    },
+    servers: [
+      {
+        url: "https://in4matic-4c2abd694526.herokuapp.com/",
+      },
+    ],
+  },
+  apis: ["./routes/transactionRoutes.js", "userRouter.js"],
+};
+
+const specs = swaggerJsdoc(options);
+app.use("/swagger", swaggerUi.serve, swaggerUi.setup(specs));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
