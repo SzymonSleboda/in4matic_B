@@ -28,6 +28,15 @@ const options = {
     ],
   },
   apis: ["./routes/transactionRoutes.js", "./routes/userRouter.js"],
+  components: {
+    securitySchemes: {
+      bearerAuth: {
+        type: "http",
+        scheme: "bearer",
+        bearerFormat: "JWT",
+      },
+    },
+  },
 };
 
 const app = express();
