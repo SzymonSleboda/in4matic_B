@@ -211,5 +211,6 @@ router.get("/", auth, getAllTransactions);
  *       - date
  *       - isIncome
  */
+router.post("/", auth, createTransaction);
 
 module.exports = router;
